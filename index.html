@@ -4,80 +4,505 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Priyanshu Roushan</title>
+  <script>
+    (function () {
+      try {
+        var k = "portfolio-theme";
+        var t = localStorage.getItem(k);
+        if (t !== "light" && t !== "dark") {
+          t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    })();
+  </script>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;900&family=Manrope:wght@400;500;700&family=Indie+Flower&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;900&amp;family=Manrope:wght@400;500;700&amp;family=Space+Grotesk:wght@400;700&amp;family=Indie+Flower&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&amp;display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- Navbar -->
-<header class="navbar">
-  <div class="logo">Priyanshu Roushan</div>
+<svg xmlns="http://www.w3.org/2000/svg" class="social-sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="icon-social-linkedin" viewBox="0 0 24 24">
+      <path
+        fill="currentColor"
+        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.063 2.063 0 1.139-.925 2.065-2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+      />
+    </symbol>
+    <symbol id="icon-social-github" viewBox="0 0 24 24">
+      <path
+        fill="currentColor"
+        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+      />
+    </symbol>
+    <symbol id="icon-social-leetcode" viewBox="0 0 24 24" fill="none">
+      <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2" fill="none" />
+      <path
+        d="M8 8l3.5 4L8 16"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"
+      />
+      <path d="M13 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+    </symbol>
+    <symbol id="icon-social-email" viewBox="0 0 24 24">
+      <path
+        fill="currentColor"
+        d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"
+      />
+    </symbol>
+  </defs>
+</svg>
 
-  <nav>
-    <a class="active" href="#">Home</a>
-    <a href="#">Projects</a>
-    <a href="#">Resume</a>
-  </nav>
+<header class="site-header">
+  <a class="brand" href="#home">
+    <span class="material-symbols-outlined" aria-hidden="true">code</span>
+    Priyanshu Roushan
+  </a>
+  <div class="site-header__end">
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#home" class="is-active">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="Switch theme">
+      <span class="material-symbols-outlined theme-toggle__icon" aria-hidden="true">dark_mode</span>
+    </button>
+  </div>
 </header>
 
 <main>
+  <!-- Home -->
+  <section id="home" class="section section--home" aria-label="Home">
+    <div class="home-doodles" aria-hidden="true">
+      <div class="doodle doodle--lt">- logic flow -</div>
+      <div class="doodle doodle--rt">★ spark of ideas</div>
+      <div class="doodle doodle--bl">the cloud bit</div>
+    </div>
 
-<!-- Doodles -->
-<div class="doodle left-top">- logic flow -</div>
-<div class="doodle right-top">★ spark of ideas</div>
-<div class="doodle bottom-left">the cloud bit</div>
+    <div class="hero">
+      <p class="tag">Available for new projects</p>
+      <h1>
+        Hello, I'm <br>
+        <span class="scribble">Priyanshu Roushan</span>
+      </h1>
+      <h2>Software Developer | Problem Solver</h2>
+      <p class="desc">
+        Crafting digital architectures that bridge the gap between human intuition and machine precision.
+      </p>
+      <div class="buttons">
+        <button type="button" class="btn-primary sketch" data-scroll-to="projects">View Projects</button>
+        <button type="button" class="btn-secondary" data-scroll-to="contact">Get in touch</button>
+      </div>
+    </div>
 
-<!-- Hero -->
-<section class="hero">
-  <p class="tag">Available for new projects</p>
-
-  <h1>
-    Hello, I'm <br>
-    <span class="scribble">Priyanshu Roushan</span>
-  </h1>
-
-  <h2>Software Developer | Problem Solver</h2>
-
-  <p class="desc">
-    Crafting digital architectures that bridge the gap between human intuition and machine precision.
-  </p>
-
-  <div class="buttons">
-    <button class="btn-primary sketch">View Projects</button>
-    <button class="btn-secondary">Get in touch</button>
-  </div>
-</section>
-
-<!-- Code Box -->
-<section class="code-box sketch">
-<pre>
-const architect = {
+    <section class="code-box sketch" aria-label="Code snippet">
+<pre>const architect = {
   name: "Priyanshu Roushan",
   passion: ["Clean Code", "Visual Storytelling"],
   tools: ["React", "Tailwind", "Node"],
   solve: (problem) => problem.breakDown().rebuild()
-};
-</pre>
-</section>
+};</pre>
+    </section>
+  </section>
 
+  <!-- Projects -->
+  <section id="projects" class="section section--projects" aria-labelledby="projects-heading">
+    <div class="section-title-row">
+      <h2 id="projects-heading" class="section-title">Projects</h2>
+      <div class="section-title-line" aria-hidden="true"></div>
+    </div>
+    <div class="projects-grid">
+      <a class="project-card" href="#" aria-label="Project: Neuralinked UI">
+        <div class="project-card__bg sketchy-border"></div>
+        <div class="project-card__inner">
+          <span class="project-card__label">Ongoing</span>
+          <h3 class="project-card__title">Neuralinked UI</h3>
+          <p class="project-card__desc">Brain-computer interaction patterns for high-frequency trading dashboards.</p>
+          <div class="project-card__meta">
+            <span class="material-symbols-outlined" aria-hidden="true">draw</span>
+            <span class="project-card__tag">#WIP</span>
+          </div>
+        </div>
+      </a>
+      <a class="project-card" href="#" aria-label="Project: DoodleDB">
+        <div class="project-card__bg sketchy-border-variant"></div>
+        <div class="project-card__inner">
+          <span class="project-card__label">Open source</span>
+          <h3 class="project-card__title">DoodleDB</h3>
+          <p class="project-card__desc">A vector database that stores and retrieves hand-drawn SVGs by semantic intent.</p>
+          <div class="project-card__meta">
+            <span class="material-symbols-outlined" aria-hidden="true">database</span>
+            <span class="project-card__tag">#OSS</span>
+          </div>
+        </div>
+      </a>
+      <a class="project-card" href="#" aria-label="Project: Minimalist Kernels">
+        <div class="project-card__bg sketchy-border"></div>
+        <div class="project-card__inner">
+          <span class="project-card__label">Research</span>
+          <h3 class="project-card__title">Minimalist Kernels</h3>
+          <p class="project-card__desc">Low-power kernel experiments for edge devices.</p>
+          <div class="project-card__meta">
+            <span class="material-symbols-outlined" aria-hidden="true">memory</span>
+            <span class="project-card__tag">#TECH</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section section--about" aria-labelledby="about-heading">
+    <div class="about-doodles" aria-hidden="true">
+      <div class="doodle-accent about-doodle-1">
+        <span class="material-symbols-outlined">lightbulb</span>
+        <p>Idea Generator</p>
+      </div>
+      <div class="doodle-accent about-doodle-2">
+        <span class="material-symbols-outlined about-doodle-2__icon" aria-hidden="true">coffee</span>
+      </div>
+      <div class="doodle-accent about-doodle-3">
+        <span class="material-symbols-outlined">laptop_mac</span>
+      </div>
+      <div class="doodle-accent about-doodle-4">
+        <span class="material-symbols-outlined">terminal</span>
+      </div>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="about-frame-wrap">
+          <div class="about-frame-bg sketchy-border-variant"></div>
+          <img
+            class="about-avatar"
+            src="https://media.licdn.com/dms/image/v2/D5603AQFXwmy4dpmHcQ/profile-displayphoto-crop_800_800/B56Zu7RVvLGcAM-/0/1768373445543?e=1776902400&v=beta&t=6SjXrEQqmA316-ca12-IWQjYE9hqiQ1pRD04QB4GoIs"
+            alt="Portrait"
+            width="384"
+            height="384"
+            loading="lazy"
+          />
+          <div class="about-badge sketchy-border about-badge--tr">Human.exe</div>
+          <div class="about-badge sketchy-border about-badge--bl">Syntactic Sugar Lover</div>
+        </div>
+      </div>
+      <div class="about-copy">
+        <h2 id="about-heading" class="about-hero-title">Building Digital <br /><span class="squiggle-underline">Sketchbooks</span>.</h2>
+        <div class="about-intro sketchy-border">
+          <p>
+            I am a software architect who believes that code should be as expressive as a hand-drawn line. My work lives at
+            the intersection of <strong>structural engineering</strong> and
+            <em>unfiltered creativity</em>.
+          </p>
+        </div>
+        <div class="about-cards">
+          <div class="about-card sketchy-border-variant">
+            <h3><span class="material-symbols-outlined" aria-hidden="true">architecture</span> Philosophy</h3>
+            <p>Everything is a draft until it's shipped. I prioritize legibility over cleverness, and human connection over cold efficiency.</p>
+          </div>
+          <div class="about-card sketchy-border">
+            <h3><span class="material-symbols-outlined" aria-hidden="true">data_object</span> Tech Stack</h3>
+            <p>Fluent in TypeScript, React, and Go. Obsessed with distributed systems and the beauty of a well-documented API.</p>
+          </div>
+        </div>
+        <div class="about-actions">
+          <a class="btn-sketch-primary sketchy-border" href="#contact">
+            Let's Talk
+            <span class="material-symbols-outlined" aria-hidden="true">arrow_right_alt</span>
+          </a>
+          <a class="btn-sketch-outline" href="#resume">View Dossier</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-scribbles">
+      <div class="section-title-row">
+        <h2 class="section-title section-title--minor">Current Scribbles</h2>
+        <div class="section-title-line"></div>
+      </div>
+      <div class="scribbles-grid">
+        <article class="scribble-card">
+          <div class="scribble-card__bg sketchy-border"></div>
+          <div class="scribble-card__inner">
+            <span class="project-card__label">Ongoing project</span>
+            <h4>Neuralinked UI</h4>
+            <p>Exploring brain-computer interaction patterns for high-frequency trading dashboards.</p>
+            <div class="project-card__meta">
+              <span class="material-symbols-outlined" aria-hidden="true">draw</span>
+              <span class="project-card__tag">#WIP</span>
+            </div>
+          </div>
+        </article>
+        <article class="scribble-card">
+          <div class="scribble-card__bg sketchy-border-variant"></div>
+          <div class="scribble-card__inner">
+            <span class="project-card__label">Side Quest</span>
+            <h4>DoodleDB</h4>
+            <p>A vector database that stores and retrieves hand-drawn SVGs based on semantic intent.</p>
+            <div class="project-card__meta">
+              <span class="material-symbols-outlined" aria-hidden="true">database</span>
+              <span class="project-card__tag">#OSS</span>
+            </div>
+          </div>
+        </article>
+        <article class="scribble-card">
+          <div class="scribble-card__bg sketchy-border"></div>
+          <div class="scribble-card__inner">
+            <span class="project-card__label">Research</span>
+            <h4>Minimalist Kernels</h4>
+            <p>Stripping down OS kernels to their bare essentials for low-power edge devices.</p>
+            <div class="project-card__meta">
+              <span class="material-symbols-outlined" aria-hidden="true">memory</span>
+              <span class="project-card__tag">#TECH</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resume -->
+  <section id="resume" class="section section--resume" aria-labelledby="resume-heading">
+    <div class="section-title-row">
+      <h2 id="resume-heading" class="section-title">Resume</h2>
+      <div class="section-title-line"></div>
+    </div>
+    <div class="resume-panel sketchy-border">
+      <p>
+        Drop your resume content here (education, experience, skills). If you have a PDF, you can link it from this section too.
+      </p>
+      <div class="resume-actions">
+        <a class="btn-sketch-primary sketchy-border" href="#">Download PDF</a>
+        <a class="btn-sketch-outline" href="#contact">Contact</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section section--contact" aria-labelledby="contact-heading">
+    <div class="section-title-row">
+      <h2 id="contact-heading" class="section-title">Contact</h2>
+      <div class="section-title-line"></div>
+    </div>
+    <div class="contact-panel sketchy-border">
+      <p>Send a message and I’ll get back to you.</p>
+      <p class="contact-social-label">Elsewhere online</p>
+      <div class="social-links">
+        <a
+          class="social-link"
+          href="https://www.linkedin.com/in/priyanshuroushan/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn profile"
+        >
+          <svg class="social-link__icon-svg" width="20" height="20" aria-hidden="true" focusable="false">
+            <use href="#icon-social-linkedin" />
+          </svg>
+          LinkedIn
+        </a>
+        <a
+          class="social-link"
+          href="https://github.com/priyanshuroushan"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub profile"
+        >
+          <svg class="social-link__icon-svg" width="20" height="20" aria-hidden="true" focusable="false">
+            <use href="#icon-social-github" />
+          </svg>
+          GitHub
+        </a>
+        <a
+          class="social-link"
+          href="https://leetcode.com/u/priyanshuroushan/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LeetCode profile"
+        >
+          <svg class="social-link__icon-svg social-link__icon-svg--stroke" width="20" height="20" aria-hidden="true" focusable="false">
+            <use href="#icon-social-leetcode" />
+          </svg>
+          LeetCode
+        </a>
+        <a class="social-link" href="mailto:priyanshuroushan@gmail.com" aria-label="Email on Gmail">
+          <svg class="social-link__icon-svg" width="20" height="20" aria-hidden="true" focusable="false">
+            <use href="#icon-social-email" />
+          </svg>
+          Gmail
+        </a>
+      </div>
+      <form class="contact-form" action="#" method="post">
+        <div class="form-field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name">
+        </div>
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email">
+        </div>
+        <div class="form-field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Write your message..."></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn-sketch-primary sketchy-border">Send</button>
+          <a class="btn-sketch-outline" href="#about">About</a>
+        </div>
+      </form>
+    </div>
+  </section>
 </main>
 
-<!-- Footer -->
-<footer>
-  <h3>Priyanshu Roushan</h3>
-
-  <div class="links">
-    <a href="#">Projects</a>
-    <a href="#">Resume</a>
-    <a href="#">Contact</a>
+<footer class="site-footer">
+  <p class="footer-name">Priyanshu Roushan</p>
+  <div class="footer-links">
+    <a href="#projects">Projects</a>
+    <a href="#about">About</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
   </div>
-
-  <p>© 2024 • Made with ❤️</p>
+  <div class="footer-social social-links social-links--footer">
+    <a
+      class="social-link"
+      href="https://www.linkedin.com/in/priyanshuroushan/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="LinkedIn profile"
+    >
+      <svg class="social-link__icon-svg" width="20" height="20" aria-hidden="true" focusable="false">
+        <use href="#icon-social-linkedin" />
+      </svg>
+      LinkedIn
+    </a>
+    <a
+      class="social-link"
+      href="https://github.com/priyanshuroushan"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="GitHub profile"
+    >
+      <svg class="social-link__icon-svg" width="20" height="20" aria-hidden="true" focusable="false">
+        <use href="#icon-social-github" />
+      </svg>
+      GitHub
+    </a>
+    <a
+      class="social-link"
+      href="https://leetcode.com/u/priyanshuroushan/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="LeetCode profile"
+    >
+      <svg class="social-link__icon-svg social-link__icon-svg--stroke" width="20" height="20" aria-hidden="true" focusable="false">
+        <use href="#icon-social-leetcode" />
+      </svg>
+      LeetCode
+    </a>
+    <a class="social-link" href="mailto:priyanshuroushan@gmail.com" aria-label="Email on Gmail">
+      <svg class="social-link__icon-svg" width="20" height="20" aria-hidden="true" focusable="false">
+        <use href="#icon-social-email" />
+      </svg>
+      Gmail
+    </a>
+  </div>
+  <div class="icon-attribution">
+    Icons made by
+    <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect" target="_blank" rel="noopener noreferrer">Pixel perfect</a>
+    from
+    <a href="https://www.flaticon.com/" title="Flaticon" target="_blank" rel="noopener noreferrer">www.flaticon.com</a>
+  </div>
+  <p class="fineprint">© 2024 Priyanshu Roushan • Made with ❤️ and a digital pen.</p>
 </footer>
 
+<script>
+(function () {
+  var THEME_KEY = "portfolio-theme";
+  var root = document.documentElement;
+
+  function applyTheme(theme) {
+    root.setAttribute("data-theme", theme);
+    var btn = document.getElementById("theme-toggle");
+    if (!btn) return;
+    var icon = btn.querySelector(".theme-toggle__icon");
+    var isDark = theme === "dark";
+    btn.setAttribute("aria-pressed", isDark ? "true" : "false");
+    btn.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to night mode");
+    if (icon) icon.textContent = isDark ? "light_mode" : "dark_mode";
+  }
+
+  function initThemeToggle() {
+    var btn = document.getElementById("theme-toggle");
+    if (!btn) return;
+    applyTheme(root.getAttribute("data-theme") || "light");
+    btn.addEventListener("click", function () {
+      var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      try {
+        localStorage.setItem(THEME_KEY, next);
+      } catch (e) {}
+      applyTheme(next);
+    });
+  }
+
+  initThemeToggle();
+
+  var navLinks = document.querySelectorAll(".site-nav a");
+  var sections = ["home", "projects", "about", "resume", "contact"];
+
+  function setActive(id) {
+    if (sections.indexOf(id) === -1) id = "home";
+    navLinks.forEach(function (a) {
+      var href = a.getAttribute("href") || "";
+      a.classList.toggle("is-active", href === "#" + id);
+    });
+  }
+
+  document.querySelectorAll("[data-scroll-to]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var id = btn.getAttribute("data-scroll-to");
+      var el = document.getElementById(id);
+      if (el) {
+        history.replaceState(null, "", "#" + id);
+        el.scrollIntoView({ behavior: "smooth" });
+        setActive(id);
+      }
+    });
+  });
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    },
+    { rootMargin: "-35% 0px -50% 0px", threshold: 0 }
+  );
+
+  sections.forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) observer.observe(el);
+  });
+
+  function syncFromHash() {
+    var h = (location.hash || "#home").replace(/^#/, "");
+    if (sections.indexOf(h) !== -1) setActive(h);
+    else setActive("home");
+  }
+
+  window.addEventListener("hashchange", syncFromHash);
+  syncFromHash();
+})();
+</script>
 </body>
 </html>
