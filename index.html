@@ -120,47 +120,160 @@
 
   <!-- Projects -->
   <section id="projects" class="section section--projects" aria-labelledby="projects-heading">
-    <div class="section-title-row">
-      <h2 id="projects-heading" class="section-title">Projects</h2>
-      <div class="section-title-line" aria-hidden="true"></div>
+    <div class="projects-showcase__header">
+      <h2 id="projects-heading" class="projects-showcase__title">
+        PROJECTS<span class="projects-showcase__underscore">_</span>
+      </h2>
+      <p class="projects-showcase__lead">
+        A selection of digital architectures, engineering experiments, and open-source contributions. Built with precision, sketched with passion.
+      </p>
+      <div class="projects-showcase__annotation" aria-hidden="true">
+        <span class="material-symbols-outlined">south_east</span>
+        <span>mostly built with caffeine</span>
+      </div>
     </div>
-    <div class="projects-grid">
-      <a class="project-card" href="#" aria-label="Project: Neuralinked UI">
-        <div class="project-card__bg sketchy-border"></div>
-        <div class="project-card__inner">
-          <span class="project-card__label">Ongoing</span>
-          <h3 class="project-card__title">Neuralinked UI</h3>
-          <p class="project-card__desc">Brain-computer interaction patterns for high-frequency trading dashboards.</p>
-          <div class="project-card__meta">
-            <span class="material-symbols-outlined" aria-hidden="true">draw</span>
-            <span class="project-card__tag">#WIP</span>
+
+    <div class="projects-showcase__grid">
+      <!-- Featured -->
+      <div class="projects-showcase__cell">
+        <div class="projects-showcase__doodle projects-showcase__doodle--featured" aria-hidden="true">
+          FEATURED!<br />
+          <span class="material-symbols-outlined projects-showcase__doodle-arrow">subdirectory_arrow_right</span>
+        </div>
+        <a class="wobbly-card" href="#" aria-label="Project: Flux Architect">
+          <div class="wobbly-card__media sketch-border-thin">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuByXnQ7BJ1F_bHQNL1ZpZcl3v98NBg2GJV_9_YxSTYz-r0yS3KuxT6UNRfGAFbf4tH-JMZjzuYufGOId-2_FHx251FeK4A0NZ174Fm07mpQuomWINFt766mI7Z6MluNK1wMXQg6ujCuazAsmUDJ3UU6INXN1AFOdQWL3wWp682fPtImJN2aAoFR13by0PK641cjWB64Y2uAwDOLNaHXDft8CESJr5_FNWhR5JC7anb9kEK_0L1-Q-CAMt4ujD4NsUdz7nW9_CGXJl0"
+              alt="Code interface"
+              loading="lazy"
+              width="800"
+              height="384"
+            />
           </div>
+          <div class="wobbly-card__head">
+            <h3 class="wobbly-card__title">Flux Architect</h3>
+            <span class="material-symbols-outlined" aria-hidden="true">open_in_new</span>
+          </div>
+          <p class="wobbly-card__desc">
+            A high-performance state management library for distributed reactive systems. Engineered for sub-millisecond propagation and extreme type safety.
+          </p>
+          <div class="wobbly-card__tags">
+            <span class="wobbly-card__tag">TypeScript</span>
+            <span class="wobbly-card__tag">Rust</span>
+            <span class="wobbly-card__tag">WASM</span>
+          </div>
+        </a>
+      </div>
+
+      <a class="projects-showcase__cell wobbly-card" href="#" aria-label="Project: Void UI Kit">
+        <div class="wobbly-card__media sketch-border-thin">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz5-OHM8xF3cmpyGM1FYOv-j_q3fCO-b3w0ROxhwavAuwj3RiOdv5U_IoRCin9fq9vwZxCszvyg8wgXbAFK_qHnTD0z81yyLRDiWBMpWJJuk58Dq-aLLWr_0OKN9aXfKtRlUwFY-S5lawxuyJSSzga8NVqyxpyfrddxbwP7wU-_IaTUUOy7K_yyVHbiSYmfcXxu_rIo98A0SQruquR7PANCwnD01_YykvECypv5DOFOVLuqgACa7KtDDpEPcNn73qJuYy0wP9kj_g"
+            alt="Abstract UI"
+            loading="lazy"
+            width="800"
+            height="384"
+          />
+        </div>
+        <div class="wobbly-card__head">
+          <h3 class="wobbly-card__title">Void UI Kit</h3>
+          <span class="material-symbols-outlined" aria-hidden="true">open_in_new</span>
+        </div>
+        <p class="wobbly-card__desc">
+          A design system focused on negative space and brutalist typography. Built to strip away the noise of modern web patterns.
+        </p>
+        <div class="wobbly-card__tags">
+          <span class="wobbly-card__tag">React</span>
+          <span class="wobbly-card__tag">Tailwind</span>
+          <span class="wobbly-card__tag">Framer</span>
         </div>
       </a>
-      <a class="project-card" href="#" aria-label="Project: DoodleDB">
-        <div class="project-card__bg sketchy-border-variant"></div>
-        <div class="project-card__inner">
-          <span class="project-card__label">Open source</span>
-          <h3 class="project-card__title">DoodleDB</h3>
-          <p class="project-card__desc">A vector database that stores and retrieves hand-drawn SVGs by semantic intent.</p>
-          <div class="project-card__meta">
-            <span class="material-symbols-outlined" aria-hidden="true">database</span>
-            <span class="project-card__tag">#OSS</span>
-          </div>
+
+      <a class="projects-showcase__cell wobbly-card" href="#" aria-label="Project: Neural Graph">
+        <div class="wobbly-card__media sketch-border-thin">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDya9GXNzvF2RBfXODWunKAIg4JrMt4EucKb2_g5bSRw8-mCBV00vQBIieXqoH4CC4-EujH8KUEgbYegH3MBHRSKn8PtKqmO1KNgJV4uCyFrEwl_ZvU6d5P6zn7n8gy41kBHCbBIy67_YaikMr6W2O6RpFxDCBOxyvF9B_OeaP3Tkp_nOW9gDRKD5H6mev7A2hJ2cs1A-3M18loa4xxgKPPLv625iVoX9x8fWhizq-4b_RCMci-53liQtFawtiFL0fFqVNecQquHT0"
+            alt="Cyberpunk workspace"
+            loading="lazy"
+            width="800"
+            height="384"
+          />
+        </div>
+        <div class="wobbly-card__head">
+          <h3 class="wobbly-card__title">Neural Graph</h3>
+          <span class="material-symbols-outlined" aria-hidden="true">open_in_new</span>
+        </div>
+        <p class="wobbly-card__desc">
+          Real-time visualization engine for complex neural networks. Uses WebGL for rendering millions of nodes at 60fps.
+        </p>
+        <div class="wobbly-card__tags">
+          <span class="wobbly-card__tag">Three.js</span>
+          <span class="wobbly-card__tag">Python</span>
+          <span class="wobbly-card__tag">D3.js</span>
         </div>
       </a>
-      <a class="project-card" href="#" aria-label="Project: Minimalist Kernels">
-        <div class="project-card__bg sketchy-border"></div>
-        <div class="project-card__inner">
-          <span class="project-card__label">Research</span>
-          <h3 class="project-card__title">Minimalist Kernels</h3>
-          <p class="project-card__desc">Low-power kernel experiments for edge devices.</p>
-          <div class="project-card__meta">
-            <span class="material-symbols-outlined" aria-hidden="true">memory</span>
-            <span class="project-card__tag">#TECH</span>
+
+      <div class="projects-showcase__cell projects-showcase__cell--wide">
+        <a class="wobbly-card" href="#" aria-label="Project: Cipher Shell">
+          <div class="wobbly-card__inner-split">
+            <div class="wobbly-card__media sketch-border-thin">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuApnWReewKJ4KgVO4WgwrSN2XmKFGy4hVBJNBbl_Y5uzcUcxTN-YmPO5hjzkbo7mZpfvd3yrwNx77vAo1Ie_35Cwa6NNauktOKFItdpekZ99Bk8mt4nukyNY5wxXNqnw6Su2EIXzPXw3UUZWtiB4Hrn2u3x0eB0kAKSYzKoLKRLdkw1GTVpYKLnWEOdMr6wUQjzSTpHgYaVjwCyslxvq3IeCQjQLpFRQwz4ozvg6nZGaNwWtRQ-LGJKzmZil7p8IwTvfnWMgCODbW4"
+                alt="Server room"
+                loading="lazy"
+                width="800"
+                height="400"
+              />
+            </div>
+            <div class="wobbly-card__split-copy">
+              <div class="wobbly-card__head">
+                <h3 class="wobbly-card__title wobbly-card__title--lg">Cipher Shell</h3>
+                <span class="material-symbols-outlined" aria-hidden="true">open_in_new</span>
+              </div>
+              <p class="wobbly-card__desc">
+                An encrypted command-line interface for secure cloud management. Features end-to-end PGP integration and custom shell scripting language.
+              </p>
+              <div class="wobbly-card__tags">
+                <span class="wobbly-card__tag">Go</span>
+                <span class="wobbly-card__tag">Kubernetes</span>
+                <span class="wobbly-card__tag">GPG</span>
+              </div>
+            </div>
           </div>
+        </a>
+      </div>
+
+      <div class="projects-showcase__cell">
+        <div class="projects-showcase__doodle projects-showcase__doodle--wip" aria-hidden="true">
+          <span class="material-symbols-outlined projects-showcase__doodle-arrow">north_west</span><br />
+          WORK IN PROGRESS
         </div>
-      </a>
+        <article class="wobbly-card" aria-label="Project: Project Delta (coming soon)">
+          <div class="wobbly-card__media sketch-border-thin wobbly-card__placeholder" aria-hidden="true">
+            <span class="material-symbols-outlined">architecture</span>
+          </div>
+          <div class="wobbly-card__head">
+            <h3 class="wobbly-card__title">Project Delta</h3>
+            <span class="material-symbols-outlined" aria-hidden="true">construction</span>
+          </div>
+          <p class="wobbly-card__desc">
+            Confidential automation framework for sustainable energy grids. Currently in stealth mode development.
+          </p>
+          <div class="wobbly-card__tags">
+            <span class="wobbly-card__tag">IoT</span>
+            <span class="wobbly-card__tag">C++</span>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="projects-showcase__cta">
+      <div class="scribble-divider" aria-hidden="true"></div>
+      <button type="button" class="projects-archive-btn" data-scroll-to="resume">
+        See Archive
+        <span class="material-symbols-outlined" aria-hidden="true">arrow_right_alt</span>
+      </button>
+      <p class="projects-showcase__hand">There’s more where that came from...</p>
     </div>
   </section>
 
