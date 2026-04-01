@@ -1,25 +1,149 @@
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #171717;
-    color: white;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    padding: auto;
-    margin: 40px;
-    font-family: 'Poppins', sans-serif;
+body {
+  background: #f9f9f9;
+  font-family: 'Manrope', sans-serif;
+  color: #1a1c1c;
 }
-.nav{
-    display: flex;
-    flex-direction: row;
-    color: white;
-}
-.container{
 
+/* Navbar */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #ddd;
+}
+
+.logo {
+  font-family: 'Epilogue';
+  font-weight: 900;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: gray;
+}
+
+nav .active {
+  color: black;
+  border-bottom: 2px solid black;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 140px 20px 60px;
+}
+
+.tag {
+  background: black;
+  color: white;
+  padding: 5px 12px;
+  font-size: 12px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-family: 'Epilogue';
+  font-size: 60px;
+}
+
+.scribble {
+  border-bottom: 4px solid black;
+}
+
+h2 {
+  margin-top: 10px;
+  color: #555;
+}
+
+.desc {
+  margin-top: 10px;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/* Buttons */
+.buttons {
+  margin-top: 30px;
+}
+
+.btn-primary {
+  padding: 12px 25px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  padding: 12px 25px;
+  border: 2px solid black;
+  background: transparent;
+  margin-left: 10px;
+}
+
+/* Sketch Border */
+.sketch {
+  border: 2px solid black;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+
+/* Code Box */
+.code-box {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 20px;
+  background: white;
+  transform: rotate(-1deg);
+}
+
+/* Doodles */
+.doodle {
+  position: absolute;
+  font-family: 'Indie Flower';
+  font-size: 14px;
+}
+
+.left-top {
+  top: 120px;
+  left: 20px;
+}
+
+.right-top {
+  top: 200px;
+  right: 30px;
+}
+
+.bottom-left {
+  bottom: 120px;
+  left: 30px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px;
+  background: #eee;
+}
+
+.links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: gray;
+}
+
+footer p {
+  margin-top: 10px;
 }
